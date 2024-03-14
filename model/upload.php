@@ -12,6 +12,7 @@ switch ($_GET['table']) {
 }
 ?>
 <hr>
+<form action="./api/update.php" method="post" enctype="multipart/form-data">
 <table style="margin: auto;">
     <tr>
         <?php
@@ -30,4 +31,10 @@ switch ($_GET['table']) {
         <td><input type="file" name="img" id=""></td>
     </tr>
 </table>
-<div class="cent"><input type="submit" value="新增"><input type="reset" value="重置"></div>
+<div class="cent">
+    <input type="hidden" name="id" value="<?=$_GET['id'];?>">
+    <input type="hidden" name="table" value="<?=$_GET['table'];?>">
+    <input type="submit" value="更新">
+    <input type="reset" value="重置">
+</div>
+</form>
