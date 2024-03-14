@@ -21,8 +21,8 @@ class DB
     function save($array)
     {
         if (isset($array['id'])) {
-            $sql = "update `$this->table` set ";
             if (!empty($array)) {
+                $sql = "update `$this->table` set ";
                 $tmp = $this->a2s($array);
                 $sql .= join(",", $tmp);
                 $sql .= " where `id` = '{$array['id']}'";
