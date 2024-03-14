@@ -9,7 +9,7 @@
                 <td></td>
             </tr>
             <?php
-               $total = $News->count();
+               $total = $DB->count();
                $div = 3;
                $pages = ceil($total / $div);
                $now = $_GET['p'] ?? 1;
