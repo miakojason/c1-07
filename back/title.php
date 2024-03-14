@@ -11,21 +11,21 @@
                     <td></td>
                 </tr>
                 <?php
-                $rows = $Title->all();
+                $rows = $DB->all();
                 foreach ($rows as $row) {
                 ?>
-                <tr>
-                    <td><img src="./img/<?=$row['img'];?>" style="width:300px;height:30px;"></td>
-                    <td><input type="text" name="text[]" value="<?=$row['text'];?>"></td>
-                    <td><input type="radio" name="sh" value="<?=$row['id'];?>"<?=($row['sh']==1)?'checked':'';?>></td>
-                    <td>
-                        <input type="hidden" name="id[]" value="<?=$row['id'];?>">
-                        <input type="checkbox" name="del[]" value="<?=$row['id'];?>">
-                    </td>
-                    <td>
-                        <input type="button" value="更新圖片" onclick="op('#cover','#cvr','./model/upload.php?table=<?=$do;?>&id=<?=$row['id'];?>')" value="更新圖片">
-                    </td>
-                </tr>
+                    <tr>
+                        <td><img src="./img/<?= $row['img']; ?>" style="width:300px;height:30px;"></td>
+                        <td><input type="text" name="text[]" value="<?= $row['text']; ?>"></td>
+                        <td><input type="radio" name="sh" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>></td>
+                        <td>
+                            <input type="hidden" name="id[]" value="<?= $row['id']; ?>">
+                            <input type="checkbox" name="del[]" value="<?= $row['id']; ?>">
+                        </td>
+                        <td>
+                            <input type="button" value="更新圖片" onclick="op('#cover','#cvr','./model/upload.php?table=<?= $do; ?>&id=<?= $row['id']; ?>')" value="更新圖片">
+                        </td>
+                    </tr>
                 <?php
                 }
                 ?>
@@ -34,6 +34,7 @@
         <table style="margin-top:40px; width:70%;">
             <tbody>
                 <tr>
+                    <input type="hidden" name="table" value="<?= $do; ?>">
                     <td width="200px"><input type="button" onclick="op('#cover','#cvr','./model/<?= $do; ?>.php')" value="新增網站標題圖片"></td>
                     <td class="cent"><input type="submit" value="修改確定"><input type="reset" value="重置"></td>
                 </tr>
