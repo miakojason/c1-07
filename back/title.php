@@ -35,7 +35,7 @@
             <tbody>
                 <tr>
                     <input type="hidden" name="table" value="<?= $do; ?>">
-                    <td width="200px"><input type="button" onclick="op('#cover','#cvr','./model/<?= $do; ?>.php')" value="新增網站標題圖片"></td>
+                    <td width="200px"><input type="button" onclick="op('#cover','#cvr','./model/<?= $do; ?>.php?table=<?= $do; ?>')" value="新增網站標題圖片"></td>
                     <td class="cent"><input type="submit" value="修改確定"><input type="reset" value="重置"></td>
                 </tr>
             </tbody>
